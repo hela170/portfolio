@@ -10,12 +10,13 @@ export default function SkillsPage() {
       borderColor: "border-blue-500/30",
       titleColor: "text-blue-400",
       skills: [
-        { name: "Java", level: "40%", color: "from-orange-400 to-orange-600" },
-        { name: "Python", level: "30%", color: "from-yellow-400 to-yellow-600" },
-        { name: "JavaScript", level: "25%", color: "from-yellow-300 to-yellow-500" },
-        { name: "Assembleur", level: "20%", color: "from-gray-400 to-gray-600" },
-        { name: "C++", level: "15%", color: "from-blue-400 to-blue-600" },
+        { name: "Java", level: "60%", color: "from-orange-400 to-orange-600" },
+        { name: "Python", level: "55%", color: "from-yellow-400 to-yellow-600" },
+        { name: "PHP", level: "50%", color: "from-indigo-400 to-indigo-600" },
+        { name: "JavaScript", level: "45%", color: "from-yellow-300 to-yellow-500" },
         { name: "HTML/CSS", level: "Avancé", color: "from-orange-400 to-orange-600" },
+        { name: "C++", level: "25%", color: "from-blue-400 to-blue-600" },
+        { name: "Assembleur", level: "25%", color: "from-gray-400 to-gray-600" },
       ],
     },
     {
@@ -24,10 +25,23 @@ export default function SkillsPage() {
       borderColor: "border-purple-500/30",
       titleColor: "text-purple-400",
       skills: [
-        { name: "Modélisation UML", level: "60%", color: "from-purple-400 to-purple-600" },
-        { name: "MySQL", level: "20%", color: "from-blue-500 to-blue-700" },
-        { name: "PostgreSQL", level: "20%", color: "from-blue-600 to-blue-800" },
         { name: "SQL", level: "Avancé", color: "from-blue-400 to-blue-600" },
+        { name: "Modélisation UML", level: "75%", color: "from-purple-400 to-purple-600" },
+        { name: "MySQL", level: "55%", color: "from-blue-500 to-blue-700" },
+        { name: "MCD / MLD", level: "60%", color: "from-purple-500 to-purple-700" },
+        { name: "PostgreSQL", level: "40%", color: "from-blue-600 to-blue-800" },
+      ],
+    },
+    {
+      category: "Web & Sécurité",
+      icon: Code,
+      borderColor: "border-pink-500/30",
+      titleColor: "text-pink-400",
+      skills: [
+        { name: "Développement back-end", level: "50%", color: "from-pink-400 to-pink-600" },
+        { name: "Intégration responsive", level: "60%", color: "from-pink-500 to-pink-700" },
+        { name: "Authentification CAS", level: "45%", color: "from-rose-400 to-rose-600" },
+        { name: "Gestion des rôles", level: "45%", color: "from-rose-500 to-rose-700" },
       ],
     },
     {
@@ -37,9 +51,37 @@ export default function SkillsPage() {
       titleColor: "text-green-400",
       skills: [
         { name: "Excel", level: "90%", color: "from-green-500 to-green-700" },
-        { name: "Linux", level: "55%", color: "from-green-400 to-green-600" },
-        { name: "Shell/Bash", level: "55%", color: "from-gray-400 to-gray-600" },
-        { name: "Apache", level: "Débutant", color: "from-orange-500 to-orange-700" },
+        { name: "Linux", level: "65%", color: "from-green-400 to-green-600" },
+        { name: "Shell/Bash", level: "60%", color: "from-gray-400 to-gray-600" },
+        { name: "Apache", level: "Intermédiaire", color: "from-orange-500 to-orange-700" },
+        { name: "DNS / DHCP", level: "50%", color: "from-teal-400 to-teal-600" },
+      ],
+    },
+  ]
+
+  const evolution = [
+    {
+      level: "BUT 1",
+      period: "2025 - 2026",
+      titleColor: "text-blue-400",
+      borderColor: "border-blue-500/30",
+      points: [
+        "Bases de la programmation (Java, Python)",
+        "Premiers modèles de données et requêtes SQL",
+        "Découverte des systèmes Linux et des réseaux",
+        "Travail d'équipe et gestion de projet (UML, Git)",
+      ],
+    },
+    {
+      level: "BUT 2",
+      period: "2026 - 2027",
+      titleColor: "text-pink-400",
+      borderColor: "border-pink-500/30",
+      points: [
+        "Développement web complet (PHP, HTML/CSS responsive)",
+        "Conception de bases de données plus riches (MCD/MLD, MySQL)",
+        "Sécurité applicative : authentification CAS et gestion des rôles",
+        "Projets proches du réel, de la modélisation à l'interface",
       ],
     },
   ]
@@ -116,6 +158,40 @@ export default function SkillsPage() {
               </Card>
             )
           })}
+        </div>
+
+        {/* Évolution BUT 1 -> BUT 2 */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-2">
+            <span className="text-gray-500">$</span>{" "}
+            <span className="gradient-text">git log --oneline ./parcours</span>
+          </h2>
+          <p className="text-gray-400 font-mono text-sm">
+            <span className="text-blue-400">{"// "}</span>Mon évolution de la 1re à la 2e année
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 mb-16">
+          {evolution.map((step, i) => (
+            <Card key={i} className={`bg-gray-800 border-2 ${step.borderColor} transition-all`}>
+              <CardHeader>
+                <CardTitle className={`${step.titleColor} flex items-center justify-between`}>
+                  <span className="font-mono">{step.level}</span>
+                  <span className="text-gray-500 font-mono text-sm">{step.period}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {step.points.map((point, pi) => (
+                    <li key={pi} className="text-gray-300 text-sm flex items-start">
+                      <span className={`mr-2 ${step.titleColor}`}>{">"}</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Tools */}

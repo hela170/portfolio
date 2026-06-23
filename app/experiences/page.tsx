@@ -1,85 +1,85 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Package, Server, Database, ShieldCheck, GitBranch, Building2, GraduationCap, Users } from "lucide-react"
+import { Chrome, Code2, Wrench, GraduationCap, Users, Baby } from "lucide-react"
 
 export default function ExperiencesPage() {
   const missions = [
     {
-      icon: Database,
-      color: "text-purple-400",
-      title: "Modélisation de la base de données",
-      text: "Conception du schéma relationnel pour gérer les fournisseurs, les bons de commande et les livraisons, puis mise en place sous MySQL.",
+      icon: Chrome,
+      color: "text-cyan-400",
+      title: "Extension Chrome",
+      text: "Développement et amélioration d'une extension Chrome destinée à automatiser des tâches sur un catalogue de pièces automobiles.",
     },
     {
-      icon: Server,
+      icon: Code2,
       color: "text-green-400",
-      title: "Développement de l'application web",
-      text: "Création d'une interface responsive en PHP, HTML et CSS permettant de suivre l'état des commandes et des livraisons en temps réel.",
+      title: "Programmation",
+      text: "Découverte concrète du métier de développeur : écriture, lecture et correction de code dans un projet déjà existant.",
     },
     {
-      icon: ShieldCheck,
+      icon: Wrench,
       color: "text-blue-400",
-      title: "Authentification via CAS",
-      text: "Intégration du service CAS de l'IUT avec une gestion fine des rôles, pour que chaque utilisateur n'accède qu'à ses propres données.",
+      title: "Gestion de projet",
+      text: "Première approche de l'organisation d'un projet informatique : comprendre le besoin, prioriser, puis livrer une amélioration utile.",
     },
   ]
 
   const competences = [
-    "Modélisation de données (MCD/MLD)",
-    "Développement back-end PHP",
-    "Intégration HTML / CSS responsive",
-    "Requêtes SQL & MySQL",
-    "Authentification CAS & rôles",
-    "Travail en environnement réel (IUT)",
+    "Développement JavaScript",
+    "Extension navigateur (Chrome)",
+    "Automatisation de tâches",
+    "Lecture de code existant",
+    "Travail en environnement réel",
+    "Organisation de projet",
   ]
 
   const apprentissages = [
     {
       color: "text-cyan-400",
-      title: "Lecture d'un vrai besoin",
-      text: "Comprendre les attentes des utilisateurs de l'IUT m'a appris à traduire un besoin concret en fonctionnalités précises plutôt qu'en suppositions.",
+      title: "Le métier vu de l'intérieur",
+      text: "Observer un développeur au quotidien m'a montré à quoi ressemble vraiment le travail : moins d'idées spectaculaires, beaucoup de rigueur et de relecture.",
     },
     {
       color: "text-pink-400",
-      title: "Rigueur et organisation",
-      text: "Gérer des données sensibles (commandes, livraisons) impose une structure claire et des contrôles à chaque étape, du modèle jusqu'à l'interface.",
+      title: "Améliorer l'existant",
+      text: "Reprendre un projet déjà commencé m'a appris à comprendre le code des autres avant de vouloir le modifier.",
     },
     {
       color: "text-orange-400",
-      title: "Autonomie technique",
-      text: "Mettre en place l'authentification CAS sans documentation toute prête m'a poussée à explorer, tester et corriger par moi-même.",
+      title: "Confirmer une orientation",
+      text: "Ce stage a confirmé mon envie de poursuivre en informatique et m'a donné des repères concrets sur ce qui m'attendait.",
     },
   ]
 
   const autresExperiences = [
     {
-      icon: Building2,
-      color: "text-blue-400",
-      border: "border-blue-500/30",
-      hover: "hover:border-blue-400/50",
-      title: "Stage d'observation — Worldline, La Défense",
-      period: "2019 - 2020",
-      missions: "Découverte des métiers du développement informatique et participation à de premières tâches de programmation (Scratch).",
-      bilan: "Premier contact avec un environnement d'entreprise tech : j'y ai compris l'importance de la collaboration entre équipes.",
-    },
-    {
       icon: GraduationCap,
       color: "text-green-400",
       border: "border-green-500/30",
       hover: "hover:border-green-400/50",
-      title: "Cours particuliers — Bezons",
+      title: "Cours particuliers — Région parisienne",
       period: "2023 - Présent",
       missions: "Soutien scolaire en mathématiques pour des élèves de primaire et de collège.",
-      bilan: "Transmettre une notion clairement développe la pédagogie, l'écoute et la patience — des qualités utiles en équipe.",
+      bilan: "Expliquer une notion simplement développe la pédagogie, l'écoute et la patience, et renforce l'autonomie des élèves.",
+    },
+    {
+      icon: Baby,
+      color: "text-blue-400",
+      border: "border-blue-500/30",
+      hover: "hover:border-blue-400/50",
+      title: "Baby-sitting — Région parisienne",
+      period: "2026",
+      missions: "Garde d'enfants et accompagnement dans les activités quotidiennes.",
+      bilan: "Une expérience qui demande de la responsabilité, de la disponibilité et beaucoup d'adaptation.",
     },
     {
       icon: Users,
       color: "text-pink-400",
       border: "border-pink-500/30",
       hover: "hover:border-pink-400/50",
-      title: "Bénévole à la Mairie — Bezons",
+      title: "Bénévolat — Mairie",
       period: "2023 - 2024",
-      missions: "Support administratif et organisationnel, coordination et facilitation de la gestion des tâches.",
+      missions: "Support administratif et organisationnel, contribution à des événements locaux.",
       bilan: "J'ai appris à m'organiser dans un cadre où la fiabilité et le respect des délais comptent vraiment.",
     },
   ]
@@ -97,27 +97,29 @@ export default function ExperiencesPage() {
           </p>
         </div>
 
-        {/* Projet phare : suivi de colis */}
+        {/* Stage de découverte : VIF AUTO */}
         <Card className="bg-gray-800 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all mb-12">
           <CardHeader>
             <div className="flex items-start space-x-3">
               <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center shrink-0">
-                <Package className="h-6 w-6 text-cyan-400" />
+                <Chrome className="h-6 w-6 text-cyan-400" />
               </div>
               <div>
                 <CardTitle className="gradient-text font-mono text-xl">
-                  Site web de suivi de colis pour l&apos;IUT
+                  Stage de découverte — VIF AUTO, Noisy-sur-Oise
                 </CardTitle>
-                <p className="text-gray-400 text-sm mt-1 font-mono">PHP · HTML · CSS · MySQL · CAS</p>
+                <p className="text-gray-400 text-sm mt-1 font-mono">
+                  JavaScript · Extension Chrome · Automatisation
+                </p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-8">
             <p className="text-gray-300 leading-relaxed">
-              Conception d&apos;une application web responsive destinée au suivi des commandes et des livraisons
-              de l&apos;IUT. Le projet couvrait l&apos;ensemble de la chaîne : de la modélisation de la base de
-              données jusqu&apos;à l&apos;interface utilisée par le personnel, en passant par la sécurisation des
-              accès.
+              Mon premier contact avec le métier de développeur : un stage de découverte centré sur le
+              développement et l&apos;amélioration d&apos;une extension Chrome destinée à automatiser des tâches
+              sur un catalogue de pièces automobiles. L&apos;occasion de voir comment on programme et comment on
+              gère un projet dans un cadre professionnel.
             </p>
 
             {/* Missions */}
@@ -168,7 +170,7 @@ export default function ExperiencesPage() {
             {/* Apprentissages / bilan softskills */}
             <div>
               <h3 className="text-white font-semibold mb-4 flex items-center">
-                <span className="text-pink-400 mr-2">{">"}</span> Ce que ce projet m&apos;a apporté
+                <span className="text-pink-400 mr-2">{">"}</span> Ce que ce stage m&apos;a apporté
               </h3>
               <div className="grid gap-4 md:grid-cols-3">
                 {apprentissages.map((a, i) => (
