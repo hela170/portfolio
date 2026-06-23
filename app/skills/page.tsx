@@ -1,8 +1,13 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Code, Database, Terminal, Cpu } from "lucide-react"
 
 export default function SkillsPage() {
+  const [yearFilter, setYearFilter] = useState<"all" | 1 | 2>("all")
+
   const technicalSkills = [
     {
       category: "Langages de Programmation",
@@ -10,13 +15,13 @@ export default function SkillsPage() {
       borderColor: "border-blue-500/30",
       titleColor: "text-blue-400",
       skills: [
-        { name: "Java", level: "60%", color: "from-orange-400 to-orange-600" },
-        { name: "Python", level: "55%", color: "from-yellow-400 to-yellow-600" },
-        { name: "PHP", level: "50%", color: "from-indigo-400 to-indigo-600" },
-        { name: "JavaScript", level: "45%", color: "from-yellow-300 to-yellow-500" },
-        { name: "HTML/CSS", level: "Avancé", color: "from-orange-400 to-orange-600" },
-        { name: "C++", level: "25%", color: "from-blue-400 to-blue-600" },
-        { name: "Assembleur", level: "25%", color: "from-gray-400 to-gray-600" },
+        { name: "Java", level: "60%", color: "from-orange-400 to-orange-600", year: 1 },
+        { name: "Python", level: "55%", color: "from-yellow-400 to-yellow-600", year: 1 },
+        { name: "PHP", level: "50%", color: "from-indigo-400 to-indigo-600", year: 2 },
+        { name: "JavaScript", level: "45%", color: "from-yellow-300 to-yellow-500", year: 1 },
+        { name: "HTML/CSS", level: "Avancé", color: "from-orange-400 to-orange-600", year: 2 },
+        { name: "C++", level: "25%", color: "from-blue-400 to-blue-600", year: 1 },
+        { name: "Assembleur", level: "25%", color: "from-gray-400 to-gray-600", year: 1 },
       ],
     },
     {
@@ -25,11 +30,11 @@ export default function SkillsPage() {
       borderColor: "border-purple-500/30",
       titleColor: "text-purple-400",
       skills: [
-        { name: "SQL", level: "Avancé", color: "from-blue-400 to-blue-600" },
-        { name: "Modélisation UML", level: "75%", color: "from-purple-400 to-purple-600" },
-        { name: "MySQL", level: "55%", color: "from-blue-500 to-blue-700" },
-        { name: "MCD / MLD", level: "60%", color: "from-purple-500 to-purple-700" },
-        { name: "PostgreSQL", level: "40%", color: "from-blue-600 to-blue-800" },
+        { name: "SQL", level: "Avancé", color: "from-blue-400 to-blue-600", year: 1 },
+        { name: "Modélisation UML", level: "75%", color: "from-purple-400 to-purple-600", year: 1 },
+        { name: "MySQL", level: "55%", color: "from-blue-500 to-blue-700", year: 2 },
+        { name: "MCD / MLD", level: "60%", color: "from-purple-500 to-purple-700", year: 2 },
+        { name: "PostgreSQL", level: "40%", color: "from-blue-600 to-blue-800", year: 1 },
       ],
     },
     {
@@ -38,10 +43,10 @@ export default function SkillsPage() {
       borderColor: "border-pink-500/30",
       titleColor: "text-pink-400",
       skills: [
-        { name: "Développement back-end", level: "50%", color: "from-pink-400 to-pink-600" },
-        { name: "Intégration responsive", level: "60%", color: "from-pink-500 to-pink-700" },
-        { name: "Authentification CAS", level: "45%", color: "from-rose-400 to-rose-600" },
-        { name: "Gestion des rôles", level: "45%", color: "from-rose-500 to-rose-700" },
+        { name: "Développement back-end", level: "50%", color: "from-pink-400 to-pink-600", year: 2 },
+        { name: "Intégration responsive", level: "60%", color: "from-pink-500 to-pink-700", year: 2 },
+        { name: "Authentification CAS", level: "45%", color: "from-rose-400 to-rose-600", year: 2 },
+        { name: "Gestion des rôles", level: "45%", color: "from-rose-500 to-rose-700", year: 2 },
       ],
     },
     {
@@ -50,11 +55,11 @@ export default function SkillsPage() {
       borderColor: "border-green-500/30",
       titleColor: "text-green-400",
       skills: [
-        { name: "Excel", level: "90%", color: "from-green-500 to-green-700" },
-        { name: "Linux", level: "65%", color: "from-green-400 to-green-600" },
-        { name: "Shell/Bash", level: "60%", color: "from-gray-400 to-gray-600" },
-        { name: "Apache", level: "Intermédiaire", color: "from-orange-500 to-orange-700" },
-        { name: "DNS / DHCP", level: "50%", color: "from-teal-400 to-teal-600" },
+        { name: "Excel", level: "90%", color: "from-green-500 to-green-700", year: 1 },
+        { name: "Linux", level: "65%", color: "from-green-400 to-green-600", year: 1 },
+        { name: "Shell/Bash", level: "60%", color: "from-gray-400 to-gray-600", year: 1 },
+        { name: "Apache", level: "Intermédiaire", color: "from-orange-500 to-orange-700", year: 2 },
+        { name: "DNS / DHCP", level: "50%", color: "from-teal-400 to-teal-600", year: 1 },
       ],
     },
   ]
@@ -106,10 +111,39 @@ export default function SkillsPage() {
           </p>
         </div>
 
+        {/* Filtre par année */}
+        <div className="mb-8 flex flex-wrap items-center gap-3">
+          <span className="text-gray-400 font-mono text-sm">
+            <span className="text-gray-500">$</span> filter --annee
+          </span>
+          {[
+            { key: "all" as const, label: "Toutes" },
+            { key: 1 as const, label: "BUT 1" },
+            { key: 2 as const, label: "BUT 2" },
+          ].map((option) => (
+            <button
+              key={String(option.key)}
+              onClick={() => setYearFilter(option.key)}
+              className={`rounded-md border px-4 py-1.5 font-mono text-sm transition-all ${
+                yearFilter === option.key
+                  ? "border-cyan-400 bg-cyan-500/20 text-cyan-300"
+                  : "border-gray-600 text-gray-400 hover:border-gray-500 hover:text-gray-200"
+              }`}
+              aria-pressed={yearFilter === option.key}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+
         {/* Technical Skills */}
         <div className="space-y-8 mb-16">
           {technicalSkills.map((category, categoryIndex) => {
             const Icon = category.icon
+            const visibleSkills = category.skills.filter(
+              (skill) => yearFilter === "all" || skill.year === yearFilter,
+            )
+            if (visibleSkills.length === 0) return null
             return (
               <Card
                 key={categoryIndex}
@@ -123,19 +157,26 @@ export default function SkillsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                    {category.skills.map((skill, skillIndex) => (
+                    {visibleSkills.map((skill, skillIndex) => (
                       <div
                         key={skillIndex}
                         className="bg-gray-700 rounded-lg p-4 border border-gray-600/50 hover:border-gray-500 transition-all"
                       >
                         <div className="flex items-center justify-between mb-2">
                           <h4 className="font-mono text-white font-semibold">{skill.name}</h4>
-                          <Badge
-                            variant="outline"
-                            className={`${category.titleColor.replace("text-", "border-").replace("400", "500/50")} ${category.titleColor} text-xs`}
-                          >
-                            {skill.level}
-                          </Badge>
+                          <div className="flex items-center gap-1.5">
+                            {yearFilter === "all" && (
+                              <span className="rounded border border-gray-500/50 px-1.5 py-0.5 font-mono text-[10px] text-gray-400">
+                                BUT {skill.year}
+                              </span>
+                            )}
+                            <Badge
+                              variant="outline"
+                              className={`${category.titleColor.replace("text-", "border-").replace("400", "500/50")} ${category.titleColor} text-xs`}
+                            >
+                              {skill.level}
+                            </Badge>
+                          </div>
                         </div>
                         <div className="w-full bg-gray-600 rounded-full h-2">
                           <div
