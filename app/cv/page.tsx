@@ -6,7 +6,7 @@ import { Download, ExternalLink } from "lucide-react"
 
 export default function CVPage() {
   const handleDownloadCV = () => {
-    window.open("https://kapitainecrochet.my.canva.site/cv-professionnel-gris-simple", "_blank")
+    window.open("/cv-hela-addar.pdf", "_blank")
   }
 
   return (
@@ -37,7 +37,7 @@ export default function CVPage() {
                 className="w-full bg-gradient-to-r from-orange-600 to-pink-600 text-white hover:from-orange-500 hover:to-pink-500 font-mono text-lg py-3"
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
-                Voir le CV en ligne
+                Ouvrir le CV (PDF)
               </Button>
 
               <div className="mt-6 p-4 bg-gray-700 rounded-lg">

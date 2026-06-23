@@ -24,10 +24,10 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-300 leading-relaxed">
-                Étudiante en première année de BUT Informatique, motivée et rigoureuse. Intéressée par les nouvelles
-                technologies et le développement logiciel, je souhaite acquérir des compétences techniques solides et
-                contribuer à des projets innovants. Mon parcours m'a permis de développer une approche méthodique et une
-                curiosité constante pour l'apprentissage de nouvelles technologies.
+                Étudiante en deuxième année de BUT Informatique à la Sorbonne Paris Nord. Ce qui me caractérise, c&apos;est
+                la rigueur : j&apos;aime comprendre un problème en profondeur avant d&apos;y répondre, structurer mes
+                données et vérifier chaque étape. Cette approche méthodique me vient autant de ma formation scientifique
+                que de l&apos;habitude de réparer et comprendre comment les choses fonctionnent.
               </p>
               <br />
               <p className="text-gray-300 leading-relaxed">
@@ -49,7 +49,7 @@ export default function AboutPage() {
               <div className="border-l-2 border-green-500 pl-6">
                 <h4 className="font-bold text-white">BUT Informatique</h4>
                 <p className="text-gray-300">IUT Sorbonne Paris Nord - Villetaneuse</p>
-                <p className="text-sm text-green-400">2024-2027 | En cours</p>
+                <p className="text-sm text-green-400">2025-2027 | En cours (2e année)</p>
                 <p className="text-sm text-gray-400 mt-2">
                   Formation complète en développement logiciel, bases de données, réseaux et systèmes.
                 </p>
@@ -88,19 +88,19 @@ export default function AboutPage() {
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-start">
                     <span className="text-blue-400 mr-2">{">"}</span>
-                    Acquérir des compétences techniques solides
+                    Trouver une alternance pour la rentrée 2026/2027
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-400 mr-2">{">"}</span>
-                    Contribuer à des projets innovants
+                    Approfondir le développement web et les bases de données
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-400 mr-2">{">"}</span>
-                    Développer une expertise en développement logiciel
+                    Travailler sur des applications réelles, utilisées au quotidien
                   </li>
                   <li className="flex items-start">
                     <span className="text-pink-400 mr-2">{">"}</span>
-                    Participer à la transformation numérique
+                    Monter en autonomie sur la conception logicielle
                   </li>
                 </ul>
               </div>

@@ -11,6 +11,7 @@ export default function Navigation() {
     { href: "/", label: "./home", command: "cd ~", color: "hover:text-blue-400" },
     { href: "/about", label: "./about", command: "cat about.md", color: "hover:text-purple-400" },
     { href: "/projects", label: "./projects", command: "ls projects/", color: "hover:text-green-400" },
+    { href: "/experiences", label: "./experiences", command: "cat experiences/", color: "hover:text-cyan-400" },
     { href: "/skills", label: "./skills", command: "cat skills.json", color: "hover:text-pink-400" },
     { href: "/cv", label: "./cv", command: "cat cv.pdf", color: "hover:text-orange-400" },
     { href: "/contact", label: "./contact", command: "./contact.sh", color: "hover:text-cyan-400" },
