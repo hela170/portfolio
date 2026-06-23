@@ -16,7 +16,8 @@ export default function HomePage() {
     "    this.role = 'Étudiante BUT Informatique';",
     "    this.location = 'Paris, France';",
     "    this.skills = ['Python', 'Java', 'JavaScript'];",
-    "    this.passion = 'Nouvelles technologies';",
+    "    this.focus = 'Développement & bases de données';",
+    "    this.trait = 'Rigueur';",
     "  }",
     "",
     "  getInfo() {",
@@ -54,11 +55,14 @@ export default function HomePage() {
             <span className="text-gray-500">{">"}</span> Étudiante BUT Informatique
           </div>
           <p className="mb-8 text-lg leading-relaxed text-gray-300 max-w-lg">
-            <span className="text-blue-400">{"// "}</span>Étudiante en développement logiciel et nouvelles technologies.
+            <span className="text-blue-400">{"// "}</span>Étudiante en 2e année de BUT Informatique, orientée
+            développement et bases de données.
             <br />
-            <span className="text-green-400">{"// "}</span>En quête de défis techniques et de projets innovants.
+            <span className="text-green-400">{"// "}</span>Je transforme un besoin concret en application qui
+            fonctionne, du modèle de données à l&apos;interface.
             <br />
-            <span className="text-pink-400">{"// "}</span>Actuellement à l'IUT Sorbonne Paris Nord.
+            <span className="text-pink-400">{"// "}</span>En recherche d&apos;une alternance pour la rentrée
+            2026/2027.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
